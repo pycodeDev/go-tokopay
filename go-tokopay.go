@@ -1,4 +1,4 @@
-package main
+package tokopay
 
 import (
 	"go-tokopay/entity"
