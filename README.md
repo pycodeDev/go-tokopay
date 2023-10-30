@@ -21,6 +21,23 @@ type ParamInfoMerchant struct {
 }
 ```
 
+call the func
+
+```golang
+    response, err := tokopay.GetInfoMerchant(ParamInfoMerchant)
+    if err != nil
+    {
+        fmt.Println(err)
+    }
+```
+
+get the response
+
+```golang
+    response.MerchantName //name of merchant
+    response.Balance // balance of merchant available to pull
+    response.BalanceHold // balance of merchant hol
+```
 > Note:
 > Idr (true) if you want get your balance in indonesian rupiahs format
 <!-- 
