@@ -20,6 +20,8 @@ type ParamInfoMerchant struct {
     Idr bool
 }
 ```
+> Note:
+> Idr (true) if you want get your balance in indonesian rupiahs format
 
 call the func
 
@@ -38,27 +40,43 @@ response.MerchantName //name of merchant
 response.Balance // balance of merchant available to pull
 response.BalanceHold // balance of merchant hold
 ```
+
+### Order Simple
+prepare your struct to use this func.
+```golang
+type ParamOrderSimple struct {
+    MerchantId string
+    Secret string
+    Method string
+    RefId string
+    Nominal int
+    Idr bool
+}
+```
 > Note:
 > Idr (true) if you want get your balance in indonesian rupiahs format
-<!-- 
-```js
-const tokovoucher = require('tokovoucher');
-const client = new tokovoucher("YOUR MERCHANT ID","YOUR SECRET");
+
+call the func
+
+```golang
+    response, err := tokopay.Order(ParamOrderSimple)
+    if err != nil
+    {
+        fmt.Println(err)
+    }
 ```
 
-### Get Info Merchant
-```js
-let saldo = await client.cekSaldo();
+get the response
+
+```golang
+response.Data // like nomor_va, checkout_url, qr_link
+response.PanduanPembayaran // guide for pay
+response.PayUrl // route after pay the payment
+response.Status // status transaction
+response.TrxId // trx id if your transaction problem, send to tokopay cs
 ```
-
-### Simple Order 
-
-```js
-let trx = await client.transaksi(refId, kodeProduk, tujuan, serverId);
-```
-
 > Note:
-> RefID adalah kode transaksi unik kamu yang di generate secara acak -->
+> Idr (true) if you want get your balance in indonesian rupiahs format
 
 ### License
 
