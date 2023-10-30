@@ -3,7 +3,7 @@ package lib
 import (
 	"errors"
 	"fmt"
-	"go-tokopay/entity"
+	"tokopay/entity"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/tidwall/gjson"

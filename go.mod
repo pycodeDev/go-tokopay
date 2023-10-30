@@ -1,4 +1,4 @@
-module go-tokopay
+module tokopay
 
 go 1.20
 

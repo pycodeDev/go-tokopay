@@ -5,7 +5,7 @@ This library is the abstraction of tokopay API for access from applications writ
 ## Instalasi
 
 ```bash
-go get github.com/pycodeDev/go-tokopay
+go get github.com/pycodeDev/tokopay
 ```
 
 ## How To Use

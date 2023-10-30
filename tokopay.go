@@ -1,8 +1,8 @@
 package tokopay
 
 import (
-	"go-tokopay/entity"
-	"go-tokopay/lib"
+	"tokopay/entity"
+	"tokopay/lib"
 )
 
 func GetInfoMerchant(param entity.ParamInfoMerchant) (entity.OutputInfoMerchant, error) {
