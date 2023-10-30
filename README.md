@@ -34,9 +34,9 @@ call the func
 get the response
 
 ```golang
-    response.MerchantName //name of merchant
-    response.Balance // balance of merchant available to pull
-    response.BalanceHold // balance of merchant hol
+response.MerchantName //name of merchant
+response.Balance // balance of merchant available to pull
+response.BalanceHold // balance of merchant hold
 ```
 > Note:
 > Idr (true) if you want get your balance in indonesian rupiahs format
