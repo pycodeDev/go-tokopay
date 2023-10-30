@@ -77,7 +77,7 @@ func (t TokopayImpl) Order(params entity.TokopayOrderSimple) (entity.OutputOrder
 }
 
 func (t TokopayImpl) OrderAdvanced(params entity.TokopayOrderAdvanced) {
-
+	return
 }
 
 func (t TokopayImpl) GetInfo() (entity.ReturnInfoMerchant, error) {
