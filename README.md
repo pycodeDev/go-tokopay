@@ -1,15 +1,15 @@
-# Tokopay Client for Golang
+# go-tokopay Client for Golang
 
-This library is the abstraction of tokopay API for access from applications written with Golang.
+This library is the abstraction of go-tokopay API for access from applications written with Golang.
 
 ## Instalasi
 
 ```bash
-go get github.com/pycodeDev/tokopay
+go get github.com/pycodeDev/go-tokopay
 ```
 
 ## How To Use
-Get Your Merchant ID and Secret Key at [Tokopay Dashboard](https://dash.tokopay.id/pengaturan/secret-key).
+Get Your Merchant ID and Secret Key at [go-tokopay Dashboard](https://dash.go-tokopay.id/pengaturan/secret-key).
 
 ### Get Info Merchant
 prepare your struct to use this func.
@@ -26,7 +26,7 @@ type ParamInfoMerchant struct {
 call the func
 
 ```golang
-    response, err := tokopay.GetInfoMerchant(ParamInfoMerchant)
+    response, err := go-tokopay.GetInfoMerchant(ParamInfoMerchant)
     if err != nil
     {
         fmt.Println(err)
@@ -59,7 +59,7 @@ type ParamOrderSimple struct {
 call the func
 
 ```golang
-    response, err := tokopay.Order(ParamOrderSimple)
+    response, err := go-tokopay.Order(ParamOrderSimple)
     if err != nil
     {
         fmt.Println(err)
@@ -73,7 +73,7 @@ response.Data // like nomor_va, checkout_url, qr_link
 response.PanduanPembayaran // guide for pay
 response.PayUrl // route after pay the payment
 response.Status // status transaction
-response.TrxId // trx id if your transaction problem, send to tokopay cs
+response.TrxId // trx id if your transaction problem, send to go-tokopay cs
 ```
 > Note:
 > Idr (true) if you want get your balance in indonesian rupiahs format

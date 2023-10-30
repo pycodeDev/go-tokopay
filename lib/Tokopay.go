@@ -3,17 +3,17 @@ package lib
 import (
 	"errors"
 	"fmt"
-	"tokopay/entity"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/pycodeDev/go-tokopay/entity"
 	"github.com/tidwall/gjson"
 )
 
-const URL = "https://api.tokopay.id/v1"
+const URL = "https://api.Tokopay.id/v1"
 
 type Tokopay interface {
-	Order(params entity.TokoPayOrderSimple) (entity.OutputOrderSimple, error)
-	OrderAdvanced(params entity.TokoPayOrderAdvanced)
+	Order(params entity.TokopayOrderSimple) (entity.OutputOrderSimple, error)
+	OrderAdvanced(params entity.TokopayOrderAdvanced)
 	GetInfo() (entity.ReturnInfoMerchant, error)
 }
 
@@ -22,13 +22,13 @@ type TokopayImpl struct {
 	Secret     string
 }
 
-func NewTokopayImpl(param entity.TokoPayCreden) Tokopay {
+func NewTokopayImpl(param entity.TokopayCreden) Tokopay {
 	return &TokopayImpl{
 		MerchantId: param.MERCHANTID,
 		Secret:     param.SECRETKEY}
 }
 
-func (t TokopayImpl) Order(params entity.TokoPayOrderSimple) (entity.OutputOrderSimple, error) {
+func (t TokopayImpl) Order(params entity.TokopayOrderSimple) (entity.OutputOrderSimple, error) {
 	var output entity.OutputOrderSimple
 	merchant_id := t.MerchantId
 	secret := t.Secret
@@ -45,7 +45,7 @@ func (t TokopayImpl) Order(params entity.TokoPayOrderSimple) (entity.OutputOrder
 
 	dataJson := gjson.GetMany(response, "status", "error_msg", "data.trx_id", "data.total_bayar", "data.total_diterima", "data.pay_url", "data.panduan_pembayaran", "data.nomor_va", "data.checkout_url", "data.qr_link")
 	if !dataJson[0].Exists() {
-		return output, errors.New("HTTP ERROR TOKOPAY !!")
+		return output, errors.New("HTTP ERROR Tokopay !!")
 	}
 
 	status := dataJson[0].String()
@@ -76,7 +76,7 @@ func (t TokopayImpl) Order(params entity.TokoPayOrderSimple) (entity.OutputOrder
 	return output, nil
 }
 
-func (t TokopayImpl) OrderAdvanced(params entity.TokoPayOrderAdvanced) {
+func (t TokopayImpl) OrderAdvanced(params entity.TokopayOrderAdvanced) {
 
 }
 
@@ -99,7 +99,7 @@ func (t TokopayImpl) GetInfo() (entity.ReturnInfoMerchant, error) {
 
 	dataJson := gjson.GetMany(response, "status", "error_msg", "data.nama_toko", "data.saldo_tersedia", "data.saldo_tertahan")
 	if !dataJson[0].Exists() {
-		return output, errors.New("HTTP ERROR TOKOPAY !!")
+		return output, errors.New("HTTP ERROR Tokopay !!")
 	}
 
 	status := dataJson[0].String()

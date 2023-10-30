@@ -1,4 +1,4 @@
-module tokopay
+module github.com/pycodeDev/go-tokopay
 
 go 1.20
 

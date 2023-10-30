@@ -1,17 +1,17 @@
 package entity
 
-type TokoPayCreden struct {
+type TokopayCreden struct {
 	MERCHANTID string
 	SECRETKEY  string
 }
 
-type TokoPayOrderSimple struct {
+type TokopayOrderSimple struct {
 	Method  string
 	RefId   string
 	Nominal int
 }
 
-type TokoPayOrderAdvanced struct {
+type TokopayOrderAdvanced struct {
 	MerchantId  string
 	Code        string
 	Secret      string

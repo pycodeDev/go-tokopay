@@ -1,8 +1,8 @@
-package tokopay
+package Tokopay
 
 import (
-	"tokopay/entity"
-	"tokopay/lib"
+	"github.com/pycodeDev/go-tokopay/entity"
+	"github.com/pycodeDev/go-tokopay/lib"
 )
 
 func GetInfoMerchant(param entity.ParamInfoMerchant) (entity.OutputInfoMerchant, error) {
@@ -12,7 +12,7 @@ func GetInfoMerchant(param entity.ParamInfoMerchant) (entity.OutputInfoMerchant,
 	secret := param.Secret
 	idr := param.Idr
 
-	merchant, err := lib.NewTokopayImpl(entity.TokoPayCreden{
+	merchant, err := lib.NewTokopayImpl(entity.TokopayCreden{
 		MERCHANTID: merchant_id,
 		SECRETKEY:  secret,
 	}).GetInfo()
@@ -43,10 +43,10 @@ func OrderSimple(param entity.ParamOrderSimple) (entity.OutputOrderSimple, error
 	ref_id := param.RefId
 	nominal := param.Nominal
 
-	order, err := lib.NewTokopayImpl(entity.TokoPayCreden{
+	order, err := lib.NewTokopayImpl(entity.TokopayCreden{
 		MERCHANTID: merchant_id,
 		SECRETKEY:  secret,
-	}).Order(entity.TokoPayOrderSimple{
+	}).Order(entity.TokopayOrderSimple{
 		Method:  method,
 		RefId:   ref_id,
 		Nominal: nominal,
