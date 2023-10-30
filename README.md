@@ -14,7 +14,7 @@ Get Your Merchant ID and Secret Key at [Tokopay Dashboard](https://dash.tokopay.
 ### Get Info Merchant
 prepare your struct to use this func.
 ```golang
-    var ParamInfoMerchant struct {
+    type ParamInfoMerchant struct {
         MerchantId string
         Secret string
         Idr bool
