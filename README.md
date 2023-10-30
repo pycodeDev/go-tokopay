@@ -8,17 +8,17 @@ This library is the abstraction of tokopay API for access from applications writ
 go get github.com/pycodeDev/go-tokopay
 ```
 
-## Pemakaian
+## How To Use
 Get Your Merchant ID and Secret Key at [Tokopay Dashboard](https://dash.tokopay.id/pengaturan/secret-key).
 
 ### Get Info Merchant
 prepare your struct to use this func.
 ```golang
-    type ParamInfoMerchant struct {
-        MerchantId string
-        Secret string
-        Idr bool
-    }
+type ParamInfoMerchant struct {
+    MerchantId string
+    Secret string
+    Idr bool
+}
 ```
 
 > Note:
