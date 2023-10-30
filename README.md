@@ -10,6 +10,19 @@ go get github.com/pycodeDev/go-tokopay
 
 ## Pemakaian
 Get Your Merchant ID and Secret Key at [Tokopay Dashboard](https://dash.tokopay.id/pengaturan/secret-key).
+
+### Get Info Merchant
+prepare your struct to use this func.
+```golang
+    var ParamInfoMerchant struct {
+        MerchantId string
+        Secret string
+        Idr bool
+    }
+```
+
+> Note:
+> Idr (true) if you want get your balance in indonesian rupiahs format
 <!-- 
 ```js
 const tokovoucher = require('tokovoucher');
