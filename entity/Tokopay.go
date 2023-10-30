@@ -6,11 +6,9 @@ type TokoPayCreden struct {
 }
 
 type TokoPayOrderSimple struct {
-	MerchantId string
-	Method     string
-	Secret     string
-	RefId      string
-	Nominal    int
+	Method  string
+	RefId   string
+	Nominal int
 }
 
 type TokoPayOrderAdvanced struct {
