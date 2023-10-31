@@ -78,7 +78,7 @@ func main() {
 
 ### License
 
-[MIT](https://github.com/aripadrian/tokovoucher/blob/master/LICENSE)
+[MIT]
 
 ### Author
 
