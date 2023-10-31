@@ -60,24 +60,21 @@ type ParamOrderSimple struct {
 call the func
 
 ```golang
-    response, err := go-tokopay.Order(ParamOrderSimple)
+import go_tokopay "github.com/pycodeDev/go-tokopay"
+func main() {
+    response, err := go_tokopay.Order(ParamOrderSimple)
     if err != nil
     {
         fmt.Println(err)
     }
-```
 
-get the response
-
-```golang
-response.Data // like nomor_va, checkout_url, qr_link
-response.PanduanPembayaran // guide for pay
-response.PayUrl // route after pay the payment
-response.Status // status transaction
-response.TrxId // trx id if your transaction problem, send to go-tokopay cs
+    response.Data // like nomor_va, checkout_url, qr_link
+    response.PanduanPembayaran // guide for pay
+    response.PayUrl // route after pay the payment
+    response.Status // status transaction
+    response.TrxId // trx id if your transaction problem, send to go-tokopay cs
+}
 ```
-> Note:
-> Idr (true) if you want get your balance in indonesian rupiahs format
 
 ### License
 
