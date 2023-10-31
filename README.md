@@ -9,7 +9,7 @@ go get github.com/pycodeDev/go-tokopay
 ```
 
 ## How To Use
-Get Your Merchant ID and Secret Key at [go-tokopay Dashboard](https://dash.go-tokopay.id/pengaturan/secret-key).
+Get Your Merchant ID and Secret Key at [Tokopay Dashboard](https://dash.go-tokopay.id/pengaturan/secret-key).
 
 ### Get Info Merchant
 prepare your struct to use this func.
