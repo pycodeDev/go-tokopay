@@ -26,19 +26,20 @@ type ParamInfoMerchant struct {
 call the func
 
 ```golang
-    response, err := go-tokopay.GetInfoMerchant(ParamInfoMerchant)
+import go_tokopay "github.com/pycodeDev/go-tokopay"
+
+func main() {
+    response, err := go_tokopay.GetInfoMerchant(ParamInfoMerchant)
     if err != nil
     {
         fmt.Println(err)
     }
-```
 
-get the response
-
-```golang
-response.MerchantName //name of merchant
-response.Balance // balance of merchant available to pull
-response.BalanceHold // balance of merchant hold
+    //response
+    response.MerchantName //name of merchant
+    response.Balance // balance of merchant available to pull
+    response.BalanceHold // balance of merchant hold
+}
 ```
 
 ### Order Simple
